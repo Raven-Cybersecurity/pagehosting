@@ -30,13 +30,33 @@
       font-size: 15px;
       color: #111;
     }
-    .sender a {
+    .tooltip {
+      position: relative;
+      display: inline-block;
+      cursor: default;
       color: #2563eb;
       font-weight: 600;
-      text-decoration: none;
     }
-    .sender a:hover {
-      text-decoration: underline;
+    .tooltip .tooltiptext {
+      visibility: hidden;
+      width: max-content;
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 6px 10px;
+      border-radius: 6px;
+      position: absolute;
+      z-index: 1;
+      bottom: 120%;
+      left: 50%;
+      transform: translateX(-50%);
+      opacity: 0;
+      transition: opacity 0.3s;
+      font-size: 13px;
+    }
+    .tooltip:hover .tooltiptext {
+      visibility: visible;
+      opacity: 1;
     }
     h2 {
       font-size: 21px;
@@ -68,12 +88,13 @@
   <div class="email-container">
     <img src="https://raven-cybersecurity.github.io/pagehosting/images/santorini.jpeg" 
     alt="Travel photo" 
-    style="width: 100%; max-width: 700px; border-radius: 12px; margin-bottom: 20px;" />
-
+    class="header-image" />
 
     <div class="sender">
       <strong>Αποστολέας:</strong>
-      <a href="mailto:support@travelnet-secure.com" title="support@travelnet-secure.com">TravelNet Agency</a>
+      <span class="tooltip">TravelNet Agency
+        <span class="tooltiptext">support@travelnet-192030.com</span>
+      </span>
     </div>
 
     <h2><span class="emoji">⚠️</span> Επείγουσα Ενημέρωση για τον Λογαριασμό σας</h2>
