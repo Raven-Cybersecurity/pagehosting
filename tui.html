@@ -1,0 +1,77 @@
+<div style="max-width: 600px; margin: 0 auto; font-family: Arial, sans-serif; border: 1px solid #ccc; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+    <!-- Header -->
+    <div style="background-color: #e6f1f6; padding: 15px; text-align: left;">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/TUI_Logo_2016.svg/512px-TUI_Logo_2016.svg.png" alt="TUI Logo" style="height: 40px;">
+    </div>
+  
+    <!-- Email Body -->
+    <div style="padding: 20px; color: #333;">
+      <p><strong>From:</strong> tui.support@tui-bookings.com</p>
+      <p><strong>Subject:</strong> Your Booking Confirmation – Action Required</p>
+      <hr>
+      <p>Dear customer,</p>
+      <p>Thank you for booking your holiday with TUI.</p>
+      <p>We’ve noticed an issue with your payment. Please 
+        <span style="position: relative; border-bottom: 1px dotted #007bff; color: #007bff; cursor: pointer;" 
+          onmouseover="showTooltip(event, 'https://tui-secure-check.com/payment')" 
+          onmouseout="hideTooltip()">click here to update your payment details</span> within the next 24 hours to avoid cancellation.
+      </p>
+  
+      <p>Attachment: 
+        <span style="position: relative; color: green; cursor: pointer;"
+          onmouseover="showTooltip(event, 'BookingConfirmation.scr')" 
+          onmouseout="hideTooltip()">BookingConfirmation.pdf</span>
+      </p>
+  
+      <p>Thank you for choosing TUI.<br>The TUI Team</p>
+    </div>
+  
+    <!-- Footer -->
+    <div style="background-color: #e6f1f6; padding: 15px; font-size: 12px; text-align: center; color: #555;">
+      This email was sent to you as part of your booking with TUI. If you have any questions, please contact us at support.tui.com.
+    </div>
+  </div>
+  
+  <!-- Tooltip -->
+  <div id="tooltip" style="
+    position: absolute;
+    background: #222;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 13px;
+    display: none;
+    z-index: 1000;
+    max-width: 80%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  "></div>
+  
+  <!-- Buttons -->
+  <div style="text-align: center; margin-top: 30px;">
+    <strong style="font-size: 16px;">Is this email legitimate or phishing?</strong><br><br>
+    <button onclick="alert('Correct! This is a phishing email.')"
+      style="padding: 10px 20px; margin-right: 10px; background-color: #e60013; color: white; border: none; border-radius: 4px; cursor: pointer;">
+      Phishing
+    </button>
+    <button onclick="alert('Oops! This was phishing.')"
+      style="padding: 10px 20px; background-color: #0077b6; color: white; border: none; border-radius: 4px; cursor: pointer;">
+      Legitimate
+    </button>
+  </div>
+  
+  <!-- Tooltip Script -->
+  <script>
+  function showTooltip(e, text) {
+    const tooltip = document.getElementById('tooltip');
+    tooltip.innerText = text;
+    tooltip.style.left = (e.pageX + 10) + 'px';
+    tooltip.style.top = (e.pageY + 10) + 'px';
+    tooltip.style.display = 'block';
+  }
+  function hideTooltip() {
+    document.getElementById('tooltip').style.display = 'none';
+  }
+  </script>
+  
