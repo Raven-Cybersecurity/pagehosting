@@ -1,41 +1,40 @@
 <!DOCTYPE html>
 <html lang="el">
 <head>
-  <meta charset="UTF-8">
-  <title>TravelNet - Επαλήθευση Στοιχείων</title>
+  <meta charset="UTF-8" />
+  <title>Phishing Awareness</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      background-color: #f4f6f8;
-      margin: 0;
-      padding: 0;
+      padding: 40px;
+      background-color: #f5f7fa;
     }
+
     .container {
       max-width: 600px;
-      margin: 40px auto;
-      background-color: #ffffff;
-      padding: 30px;
+      margin: auto;
+      background: white;
+      padding: 40px;
       border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     }
-    h2 {
-      color: #1d3557;
-    }
-    p {
-      font-size: 16px;
-      color: #333333;
-      line-height: 1.6;
-    }
+
     .button {
       display: inline-block;
       margin-top: 20px;
-      padding: 12px 20px;
+      padding: 12px 24px;
       background-color: #007bff;
       color: white;
       text-decoration: none;
-      border-radius: 5px;
+      border-radius: 6px;
       font-weight: bold;
+      cursor: pointer;
     }
+
+    .button:hover {
+      background-color: #0056b3;
+    }
+
     .footer {
       margin-top: 40px;
       font-size: 12px;
@@ -46,28 +45,21 @@
 </head>
 <body>
   <div class="container">
-    <h2>🛑 Επείγουσα Ενημέρωση: Επικαιροποίηση των Πληροφοριών σας στο TravelNet</h2>
+    <h2>⚠️ Επαλήθευση Απαιτείται</h2>
     <p>
-      Αγαπητέ/ή συνεργάτη,<br><br>
-      Καθώς πλησιάζει η έναρξη της θερινής τουριστικής περιόδου, η πλατφόρμα μας προβαίνει σε υποχρεωτική επικαιροποίηση των στοιχείων πρόσβασης όλων των συνεργαζόμενων ταξιδιωτικών γραφείων.
+      Παρακαλούμε πατήστε στο παρακάτω κουμπί για να επαληθεύσετε τα στοιχεία της επιχείρησής σας πριν την έναρξη της τουριστικής περιόδου.
     </p>
-    <p><strong>Η επιχείρησή σας έχει επιλεγεί για επαλήθευση των στοιχείων πρόσβασης.</strong></p>
-    <p>
-      Για να συνεχίσετε να έχετε πλήρη πρόσβαση σε κρατήσεις, συνεργάτες και πληροφορίες πελατών, παρακαλούμε πατήστε στον παρακάτω σύνδεσμο:
+
+    <a class="button"
+       href="http://travelnet-attack.com/login/validate?agencyid=xyz123"
+       onclick="event.preventDefault();"
+       title="http://travelnet-attack.com/login/validate?agencyid=xyz123">
+       Επαλήθευση Αρχείου
+    </a>
+
+    <p class="footer">
+      Αυτό είναι παράδειγμα εκπαιδευτικού phishing email.
     </p>
-    <a class="button" href="https://travelnet-secure.com/login/validate?agencyid=TR-50219">Επαλήθευση Στοιχείων</a>
-    <p>
-      ⚠️ Αν δεν ολοκληρώσετε την επαλήθευση εντός 24 ωρών, η πρόσβασή σας στο TravelNet ενδέχεται να περιοριστεί προσωρινά για λόγους ασφαλείας.
-    </p>
-    <p>
-      Με εκτίμηση,<br>
-      <strong>TravelNet Secure Services</strong><br>
-      Τμήμα Υποστήριξης Συνεργατών
-    </p>
-    <div class="footer">
-      Αυτό είναι ένα αυτοματοποιημένο μήνυμα. Παρακαλώ μην απαντήσετε.<br>
-      *Εκπαιδευτικό παράδειγμα phishing για σκοπούς επίγνωσης.
-    </div>
   </div>
 </body>
 </html>
