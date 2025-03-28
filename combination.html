@@ -1,76 +1,173 @@
-<!-- ✅ PHISHING SIMULATION – QUESTION 1 -->
+<!-- ✅ PHISHING SIMULATION – IMPROVED VERSION -->
 
-<div id="question1" style="max-width: 600px; margin: 0 auto; font-family: Arial, sans-serif; border: 1px solid #ccc; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
-    <!-- Header -->
-    <div style="background-color: #e6f1f6; padding: 15px; text-align: left;">
+<style>
+    body {
+      background-color: #e9f2fb;
+      padding: 30px 10px;
+    }
+  
+    .email-card {
+      max-width: 700px;
+      margin: 0 auto;
+      font-family: Arial, sans-serif;
+      border: 1px solid #ccc;
+      background-color: #fff;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+  
+    .email-header {
+      background-color: #cde4f9;
+      padding: 15px;
+    }
+  
+    .email-body {
+      padding: 20px;
+      color: #333;
+    }
+  
+    .email-footer {
+      background-color: #cde4f9;
+      padding: 12px;
+      font-size: 12px;
+      text-align: center;
+      color: #555;
+    }
+  
+    .button-area {
+      text-align: center;
+      margin-top: 25px;
+    }
+  
+    .answer-btn {
+      padding: 10px 24px;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+      font-size: 16px;
+      margin: 0 10px;
+      cursor: pointer;
+    }
+  
+    .phishing-btn {
+      background-color: #e60013;
+      color: white;
+    }
+  
+    .valid-btn {
+      background-color: #0077b6;
+      color: white;
+    }
+  
+    .next-btn {
+      background-color: #444;
+      color: white;
+      padding: 10px 24px;
+      margin-top: 20px;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+  
+    .feedback {
+      text-align: center;
+      font-weight: bold;
+      font-size: 18px;
+      margin-top: 20px;
+    }
+  
+    #tooltip {
+      position: absolute;
+      background: #222;
+      color: #fff;
+      padding: 5px 10px;
+      border-radius: 4px;
+      font-size: 13px;
+      display: none;
+      z-index: 1000;
+    }
+  
+    .hoverlink {
+      position: relative;
+      border-bottom: 1px dotted #007bff;
+      color: #007bff;
+      cursor: pointer;
+    }
+  
+    .attachment {
+      color: green;
+      cursor: pointer;
+    }
+  </style>
+  
+  <!-- ✅ Question 1 -->
+  <div id="question1" class="email-card">
+    <div class="email-header">
       <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/TUI_Logo_2016.svg/512px-TUI_Logo_2016.svg.png" alt="TUI Logo" style="height: 40px;">
     </div>
-  
-    <!-- Email Body -->
-    <div style="padding: 20px; color: #333;">
+    <div class="email-body">
       <p><strong>From:</strong> tui.support@tui-bookings.com</p>
       <p><strong>Subject:</strong> Your Booking Confirmation – Action Required</p>
       <hr>
       <p>Dear customer,</p>
       <p>We’ve noticed an issue with your payment. Please 
-        <span style="position: relative; border-bottom: 1px dotted #007bff; color: #007bff; cursor: pointer;" 
-          onmouseover="showTooltip(event, 'https://tui-secure-check.com/payment')" 
-          onmouseout="hideTooltip()">click here to update your payment details</span>.
+        <span class="hoverlink" onmouseover="showTooltip(event, 'https://tui-secure-check.com/payment')" onmouseout="hideTooltip()">click here to update your payment details</span>.
       </p>
       <p>Attachment: 
-        <span style="position: relative; color: green; cursor: pointer;"
-          onmouseover="showTooltip(event, 'BookingConfirmation.scr')" 
-          onmouseout="hideTooltip()">BookingConfirmation.pdf</span>
+        <span class="attachment" onmouseover="showTooltip(event, 'BookingConfirmation.scr')" onmouseout="hideTooltip()">BookingConfirmation.pdf</span>
       </p>
       <p>Thank you for choosing TUI.<br>The TUI Team</p>
     </div>
-  
-    <!-- Footer -->
-    <div style="background-color: #e6f1f6; padding: 15px; font-size: 12px; text-align: center; color: #555;">
+    <div class="email-footer">
       This email was sent to you as part of your booking with TUI.
     </div>
   </div>
   
-  <!-- Feedback & Buttons -->
-  <div style="text-align: center; margin-top: 20px;">
+  <div class="button-area">
     <strong>Is this email legitimate or phishing?</strong><br><br>
-    <button onclick="showFeedback(true, 'question1')" style="padding: 10px 20px; background-color: #e60013; color: white; border: none; border-radius: 4px; cursor: pointer;">Phishing</button>
-    <button onclick="showFeedback(false, 'question1')" style="padding: 10px 20px; background-color: #0077b6; color: white; border: none; border-radius: 4px; cursor: pointer;">Legitimate</button>
+    <button onclick="showFeedback(true, 'question1')" class="answer-btn phishing-btn">Phishing</button>
+    <button onclick="showFeedback(false, 'question1')" class="answer-btn valid-btn">Valid</button>
   </div>
   
-  <div id="feedback-question1" style="text-align: center; font-weight: bold; margin-top: 20px;"></div>
+  <div id="feedback-question1" class="feedback"></div>
   
-  <div id="next-button" style="display: none; text-align: center; margin-top: 20px;">
-    <button onclick="showQuestion2()" style="padding: 10px 20px; background-color: #444; color: white; border: none; border-radius: 4px; cursor: pointer;">Next Email</button>
+  <div id="next-button" style="text-align: center; display: none;">
+    <button onclick="showQuestion2()" class="next-btn">Next Email</button>
   </div>
   
-  <!-- TOOLTIP -->
-  <div id="tooltip" style="position: absolute; background: #222; color: #fff; padding: 5px 10px; border-radius: 4px; font-size: 13px; display: none; z-index: 1000;"></div>
+  <!-- ✅ Tooltip -->
+  <div id="tooltip"></div>
   
-  <!-- ✅ QUESTION 2 (Initially Hidden) -->
-  <div id="question2" style="display: none; max-width: 600px; margin: 50px auto 0 auto; font-family: Arial, sans-serif; border: 1px solid #ccc; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
-    <div style="background-color: #f9f9f9; padding: 20px;">
-      <p><strong>From:</strong> hr@company-careers.net</p>
-      <p><strong>Subject:</strong> Interview Invitation - Next Steps</p>
-      <hr>
-      <p>Dear applicant,</p>
-      <p>We are pleased to invite you for an online interview. Please download the file below for instructions:</p>
-      <p>Attachment: 
-        <span style="position: relative; color: green; cursor: pointer;"
-          onmouseover="showTooltip(event, 'InterviewSchedule.exe')" 
-          onmouseout="hideTooltip()">InterviewDetails.pdf</span>
-      </p>
-      <p>Thank you,<br>HR Department</p>
+  <!-- ✅ Question 2 -->
+  <div id="question2" style="display: none;">
+    <div class="email-card" style="margin-top: 60px;">
+      <div class="email-body">
+        <p><strong>From:</strong> hr@company-careers.net</p>
+        <p><strong>Subject:</strong> Interview Invitation - Next Steps</p>
+        <hr>
+        <p>Dear applicant,</p>
+        <p>We are pleased to invite you for an online interview. Please download the file below for instructions:</p>
+        <p>Attachment: 
+          <span class="attachment" onmouseover="showTooltip(event, 'InterviewSchedule.exe')" onmouseout="hideTooltip()">InterviewDetails.pdf</span>
+        </p>
+        <p>Thank you,<br>HR Department</p>
+      </div>
+      <div class="email-footer">
+        Automated message – do not reply.
+      </div>
+    </div>
+  
+    <div class="button-area">
+      <strong>Is this email legitimate or phishing?</strong><br><br>
+      <button onclick="showFeedback(true, 'question2')" class="answer-btn phishing-btn">Phishing</button>
+      <button onclick="showFeedback(false, 'question2')" class="answer-btn valid-btn">Valid</button>
+      <div id="feedback-question2" class="feedback"></div>
     </div>
   </div>
   
-  <div id="question2-actions" style="display: none; text-align: center; margin-top: 20px;">
-    <strong>Is this email legitimate or phishing?</strong><br><br>
-    <button onclick="showFeedback(true, 'question2')" style="padding: 10px 20px; background-color: #e60013; color: white; border: none; border-radius: 4px; cursor: pointer;">Phishing</button>
-    <button onclick="showFeedback(false, 'question2')" style="padding: 10px 20px; background-color: #0077b6; color: white; border: none; border-radius: 4px; cursor: pointer;">Legitimate</button>
-    <div id="feedback-question2" style="text-align: center; font-weight: bold; margin-top: 20px;"></div>
-  </div>
-  
+  <!-- ✅ Script -->
   <script>
   function showTooltip(e, text) {
     const tooltip = document.getElementById('tooltip');
@@ -91,15 +188,18 @@
       : "❌ Incorrect. This was actually phishing.";
     feedbackDiv.style.color = isCorrect ? "green" : "red";
   
-    // Show Next button if question1
     if (id === "question1") {
       document.getElementById("next-button").style.display = "block";
     }
+  
+    // Scroll to feedback smoothly
+    setTimeout(() => {
+      feedbackDiv.scrollIntoView({ behavior: "smooth", block: "center" });
+    }, 200);
   }
   
   function showQuestion2() {
     document.getElementById("question2").style.display = "block";
-    document.getElementById("question2-actions").style.display = "block";
     document.getElementById("next-button").style.display = "none";
   }
   </script>
