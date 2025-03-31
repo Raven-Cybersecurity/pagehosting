@@ -52,6 +52,28 @@
       font-size: 20px;
       margin-right: 6px;
     }
+    .quiz-section {
+      margin-top: 40px;
+      background-color: #f9fafb;
+      padding: 20px;
+      border-radius: 10px;
+      border: 1px solid #d1d5db;
+    }
+    .quiz-section h3 {
+      margin-top: 0;
+    }
+    .quiz-section label {
+      display: block;
+      margin-bottom: 10px;
+      cursor: pointer;
+    }
+    .feedback {
+      margin-top: 15px;
+      padding: 15px;
+      background-color: #eef2ff;
+      border-left: 5px solid #6366f1;
+      display: none;
+    }
   </style>
 </head>
 <body>
@@ -79,6 +101,40 @@
     <div class="footer">
       Επικοινωνήστε μαζί μας στο travelnet-info-secure@mail-support.com
     </div>
+
+    <div class="quiz-section">
+      <h3>Αυτό το email προέρχεται από την επίσημη εταιρεία TravelNet;</h3>
+      <form id="quiz-form">
+        <label><input type="radio" name="answer" value="yes"> Ναι</label>
+        <label><input type="radio" name="answer" value="no"> Όχι</label>
+        <button type="submit">Υποβολή</button>
+      </form>
+      <div class="feedback" id="feedback"></div>
+    </div>
   </div>
+
+  <script>
+    const form = document.getElementById('quiz-form');
+    const feedback = document.getElementById('feedback');
+
+    form.addEventListener('submit', function(event) {
+      event.preventDefault();
+      const answer = form.elements['answer'].value;
+
+      feedback.style.display = 'block';
+
+      if (answer === 'yes') {
+        feedback.innerHTML = `
+          <strong>Επισήμανση:</strong>
+          <p>Στο σεμινάριο επισημάνθηκε ότι το εμφανιζόμενο όνομα αποστολέα δεν αποτελεί απόδειξη αξιοπιστίας. Εάν τοποθετήσετε τον δείκτη του ποντικιού πάνω στο όνομα, μπορείτε να δείτε τη <strong>πραγματική ηλεκτρονική διεύθυνση</strong>. Συνεπώς, αξιολογήστε ξανά την προέλευση του συγκεκριμένου email.</p>
+        `;
+      } else {
+        feedback.innerHTML = `
+          <strong>Σωστή Παρατήρηση:</strong>
+          <p>Παρόλο που το εμφανιζόμενο όνομα είναι "TravelNet Agency", η προσεκτική εξέταση της διεύθυνσης ηλεκτρονικού ταχυδρομείου αποκαλύπτει ότι <strong>δεν</strong> πρόκειται για επίσημο φορέα. Η διεύθυνση "support@travelnet-attack.com" δεν αντιστοιχεί σε γνωστό ή επιβεβαιωμένο domain της εταιρείας TravelNet και συνεπώς ενέχει υψηλό βαθμό κινδύνου.</p>
+        `;
+      }
+    });
+  </script>
 </body>
 </html>
