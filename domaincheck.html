@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="UTF-8">
+  <title>Phishing Quiz - Έλεγχος Email</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      padding: 30px;
+      line-height: 1.6;
+    }
+    .quiz-container {
+      background-color: #fff;
+      border-radius: 10px;
+      padding: 20px;
+      max-width: 600px;
+      margin: 0 auto;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h2 {
+      color: #333;
+    }
+    .question {
+      margin-bottom: 20px;
+    }
+    .answers label {
+      display: block;
+      margin-bottom: 10px;
+      cursor: pointer;
+    }
+    .result {
+      margin-top: 20px;
+      padding: 15px;
+      background-color: #e6f7ff;
+      border-left: 5px solid #1890ff;
+      display: none;
+    }
+    button {
+      padding: 10px 15px;
+      background-color: #1890ff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0f78d1;
+    }
+  </style>
+</head>
+<body>
+  <div class="quiz-container">
+    <h2>Ποιο από τα παρακάτω email φαίνεται να είναι γνήσιο (legitimate);</h2>
+    <p><strong>Η εταιρεία ονομάζεται Phishman.</strong> Όλοι οι υπάλληλοι χρησιμοποιούν εταιρικά email.</p>
+    <div class="question">
+      <form id="quiz-form">
+        <div class="answers">
+          <label><input type="radio" name="email" value="1"> support@secure-phishman.com</label>
+          <label><input type="radio" name="email" value="2"> info@phishman-support.com</label>
+          <label><input type="radio" name="email" value="3"> maria.k@phishman.com</label>
+          <label><input type="radio" name="email" value="4"> helpdesk@ph1shman.com</label>
+        </div>
+        <button type="submit">Υποβολή</button>
+      </form>
+      <div class="result" id="result-box">
+        <strong>Επεξήγηση:</strong>
+        <p>Το μόνο γνήσιο email είναι το <strong>maria.k@phishman.com</strong>, καθώς χρησιμοποιεί το επίσημο domain της εταιρείας (<code>@phishman.com</code>), χωρίς τροποποιήσεις, παρεμβάσεις ή παραλλαγές. Τα υπόλοιπα περιλαμβάνουν παραπλανητικά domains ή αλλαγές όπως π.χ. "ph1shman" με αριθμό αντί για γράμμα, ή προσθήκες λέξεων που δεν σχετίζονται με την πραγματική εταιρική ταυτότητα.</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const form = document.getElementById('quiz-form');
+    const resultBox = document.getElementById('result-box');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      resultBox.style.display = 'block';
+    });
+  </script>
+</body>
+</html>
