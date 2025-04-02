@@ -42,35 +42,12 @@
       color: #00448f;
       font-weight: bold;
       text-decoration: none;
-      position: relative;
     }
-    .email-body a::after {
-      content: "https://secure-verification-alerts.com/eurobank";
-      position: absolute;
-      left: 0;
-      top: 100%;
+    .email-body a:hover::after {
+      content: " https://secure-verification-alerts.com/eurobank";
       font-size: 12px;
-      color: #6b7280;
-      background-color: #f1f5f9;
-      padding: 2px 6px;
-      border-radius: 4px;
-      margin-top: 4px;
-      white-space: nowrap;
-    }
-    .question-block {
-      margin-top: 30px;
-      background-color: #f3f4f6;
-      padding: 20px;
-      border-radius: 8px;
-    }
-    .question-block strong {
-      display: block;
-      margin-bottom: 10px;
-      font-size: 16px;
-    }
-    .question-block ul {
-      margin-top: 10px;
-      padding-left: 20px;
+      color: #dc2626;
+      margin-left: 5px;
     }
     .assessment {
       margin-top: 30px;
@@ -92,13 +69,30 @@
       border-radius: 6px;
       font-size: 14px;
       color: #065f46;
+      display: none;
+    }
+    .feedback ul {
+      margin-top: 10px;
+      padding-left: 20px;
     }
   </style>
+  <script>
+    function showFeedback() {
+      const feedback = document.querySelector('.feedback');
+      if (feedback) feedback.style.display = 'block';
+    }
+    window.onload = function() {
+      const options = document.querySelectorAll('input[name="phishcheck"]');
+      options.forEach(option => {
+        option.addEventListener('change', showFeedback);
+      });
+    }
+  </script>
 </head>
 <body>
   <div class="email-container">
     <div class="email-header">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Eurobank_Logo.svg/2560px-Eurobank_Logo.svg.png" alt="Eurobank logo">
+      <img src="eurobank-logo.png" alt="Eurobank logo">
     </div>
 
     <div class="sender-info">
@@ -109,32 +103,23 @@
       <p>Καλησπέρα σας,</p>
 
       <p>
-        Έχουμε παρατηρήσει κάποιες αλλαγές στον λογαριασμό σας και θα θέλαμε να ρίξετε μια ματιά για παν ενδεχόμενο. Δεν είναι κάτι σοβαρό, απλώς καλού-κακού να το ελέγξετε.
+        Θα θέλαμε να σας ενημερώσουμε ότι το σύστημα ασφαλείας μας εντόπισε κάποιες μη συνηθισμένες δραστηριότητες στον εταιρικό σας λογαριασμό. Αν και δεν έχει παρατηρηθεί άμεση απειλή, σας προτείνουμε να προχωρήσετε σε έναν προληπτικό έλεγχο για να διασφαλίσουμε την ακεραιότητα των συναλλαγών σας.
       </p>
 
       <p>
-        Αν έχετε χρόνο, πατήστε εδώ για να δείτε τις λεπτομέρειες:
+        Παρακαλούμε όπως ακολουθήσετε τον παρακάτω σύνδεσμο ώστε να επιβεβαιώσετε τα στοιχεία σας και να διασφαλιστεί η απρόσκοπτη πρόσβαση στις υπηρεσίες μας:
         <a href="#">Έλεγχος λογαριασμού</a>
       </p>
 
       <p>
-        Να είστε καλά και ευχαριστούμε που μας εμπιστεύεστε.
+        Εάν δεν προβείτε στην ενέργεια αυτή εντός των επόμενων 24 ωρών, υπάρχει πιθανότητα προσωρινής αναστολής πρόσβασης για λόγους ασφαλείας.
+      </p>
+
+      <p>
+        Σας ευχαριστούμε για την εμπιστοσύνη που δείχνετε στη Eurobank και παραμένουμε στη διάθεσή σας για οποιαδήποτε περαιτέρω πληροφορία.
       </p>
 
       <p>Με εκτίμηση,<br>Eurobank Team</p>
-    </div>
-
-    <div class="question-block">
-      <strong>🧐 Τι πρέπει να προσέξετε:</strong>
-      <ul>
-        <li>Η προσφώνηση είναι γενική και οικεία (“Καλησπέρα σας”). Είναι αυτό τυπικό για τραπεζική επικοινωνία;</li>
-        <li>Η διατύπωση περιλαμβάνει εκφράσεις όπως “να ρίξετε μια ματιά” και “καλού-κακού” — δείχνουν επίσημο ή ανεπίσημο ύφος;</li>
-        <li>Η υπογραφή “Eurobank Team” είναι επίσημη ή ελλιπής;</li>
-        <li>Υπάρχουν συντακτικά ή γλωσσικά σημεία που δεν συνάδουν με την επαγγελματική ταυτότητα μιας τράπεζας;</li>
-        <li>Ζητούνται ευαίσθητα προσωπικά στοιχεία χωρίς εξασφαλισμένο πλαίσιο; Αν ναι, με ποιο τρόπο;</li>
-        <li>Παρατηρείτε ασάφεια ή κακή χρήση της γλώσσας που μειώνει την αξιοπιστία του μηνύματος;</li>
-      </ul>
-      <p>Η προσεκτική παρατήρηση της γλώσσας, της διατύπωσης και του ύφους ενός email αποτελεί ουσιαστικό βήμα για την αναγνώριση πιθανής προσπάθειας εξαπάτησης.</p>
     </div>
 
     <div class="assessment">
@@ -144,6 +129,12 @@
 
       <div class="feedback">
         👉 Πρόκειται για phishing, καθώς η διεύθυνση αποστολέα δεν είναι επίσημη της Eurobank και το link οδηγεί σε μη αναγνωρίσιμο domain. Επιπλέον, η γλώσσα είναι ανεπίσημη και γενική, κάτι που δεν συνάδει με την επικοινωνιακή ταυτότητα ενός τραπεζικού οργανισμού.
+        <ul>
+          <li>Η προσφώνηση είναι γενική (“Καλησπέρα σας”) και όχι εξατομικευμένη.</li>
+          <li>Η χρήση εκφράσεων όπως “παρακαλούμε όπως” και “υπάρχει πιθανότητα αναστολής” προσπαθεί να δημιουργήσει αίσθηση πίεσης χωρίς σαφή τεκμηρίωση.</li>
+          <li>Η υπογραφή “Eurobank Team” δεν είναι ο τυπικός τρόπος με τον οποίο υπογράφουν τα επίσημα emails.</li>
+          <li>Η σύνταξη και η διατύπωση παρουσιάζουν ασάφειες και δεν συνάδουν με την υψηλή γλωσσική ποιότητα ενός πραγματικού τραπεζικού μηνύματος.</li>
+        </ul>
       </div>
     </div>
   </div>
