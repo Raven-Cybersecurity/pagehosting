@@ -38,7 +38,7 @@
       cursor: pointer;
     }
     .sender span:hover::after {
-      content: " <support@travelnet-attack.com>";
+      content: " <support@travelnet-bipbop.com>";
       font-size: 12px;
       color: #4b5563;
       margin-left: 6px;
@@ -90,6 +90,12 @@
       font-size: 14px;
       display: none;
     }
+    .hint {
+      margin-top: 10px;
+      font-size: 14px;
+      color: #ef4444;
+      display: none;
+    }
   </style>
 </head>
 <body>
@@ -121,24 +127,27 @@
         <button type="submit">Υποβολή</button>
       </form>
       <div class="feedback" id="feedback"></div>
+      <div class="hint" id="hint">💡 Υπόδειξη: Ελέγξτε προσεκτικά το domain της διεύθυνσης email του αποστολέα.</div>
     </div>
   </div>
 
   <script>
     const form = document.getElementById('quiz-form');
     const feedback = document.getElementById('feedback');
+    const hint = document.getElementById('hint');
 
     form.addEventListener('submit', function(event) {
       event.preventDefault();
       const answer = form.elements['answer'].value;
-      feedback.style.display = 'block';
+      feedback.style.display = 'none';
+      hint.style.display = 'none';
 
       if (answer === 'yes') {
+        feedback.style.display = 'block';
         feedback.innerHTML = `<strong>Επισήμανση:</strong>
         <p>Το εμφανιζόμενο όνομα αποστολέα δεν αποτελεί απόδειξη αξιοπιστίας. Εάν τοποθετήσετε τον δείκτη του ποντικιού πάνω στο όνομα, μπορείτε να δείτε τη <strong>πραγματική ηλεκτρονική διεύθυνση</strong>. Αξιολογήστε ξανά την προέλευση του συγκεκριμένου email.</p>`;
       } else {
-        feedback.innerHTML = `<strong>Σωστή Παρατήρηση:</strong>
-        <p>Παρόλο που το εμφανιζόμενο όνομα είναι "TravelNet Agency", η προσεκτική εξέταση της διεύθυνσης ηλεκτρονικού ταχυδρομείου αποκαλύπτει ότι <strong>δεν</strong> πρόκειται για επίσημο φορέα. Η διεύθυνση "support@travelnet-attack.com" δεν αντιστοιχεί σε γνωστό ή επιβεβαιωμένο domain της εταιρείας TravelNet και συνεπώς ενέχει υψηλό βαθμό κινδύνου.</p>`;
+        hint.style.display = 'block';
       }
     });
   </script>
