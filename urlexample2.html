@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="UTF-8">
+  <title>Ενημέρωση για Επικαιροποίηση Στοιχείων Πελάτη</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f3f4f6;
+      padding: 40px;
+    }
+    .email-container {
+      max-width: 700px;
+      margin: auto;
+      background-color: #ffffff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    .email-header {
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    .sender-info {
+      font-size: 14px;
+      color: #444;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .sender-info span {
+      text-decoration: underline;
+      cursor: help;
+    }
+    .email-body {
+      font-size: 15px;
+      color: #1f2937;
+      line-height: 1.7;
+    }
+    .email-body a {
+      color: #1d4ed8;
+      font-weight: bold;
+      text-decoration: none;
+    }
+    .email-body a:hover::after {
+      content: " http://bankclient-update.secure-loginportal.click";
+      font-size: 12px;
+      color: #dc2626;
+      margin-left: 6px;
+    }
+    .assessment {
+      margin-top: 30px;
+      background-color: #e0f2fe;
+      border-left: 4px solid #38bdf8;
+      padding: 15px;
+      border-radius: 8px;
+    }
+    .assessment label {
+      display: block;
+      margin-top: 10px;
+      font-size: 15px;
+    }
+    .feedback {
+      margin-top: 15px;
+      background-color: #e0f2fe;
+      border-left: 4px solid #38bdf8;
+      padding: 12px;
+      border-radius: 6px;
+      font-size: 14px;
+      color: #1e3a8a;
+      display: none;
+    }
+  </style>
+  <script>
+    function showFeedback() {
+      const feedback = document.querySelector('.feedback');
+      if (feedback) feedback.style.display = 'block';
+    }
+    window.onload = function () {
+      const options = document.querySelectorAll('input[name="phishcheck"]');
+      options.forEach(option => {
+        option.addEventListener('change', showFeedback);
+      });
+    }
+  </script>
+</head>
+<body>
+  <div class="email-container">
+    <div class="email-header">
+      <h2>Υπενθύμιση Ενημέρωσης Προσωπικών Στοιχείων</h2>
+    </div>
+
+    <div class="sender-info">
+      <strong>Αποστολέας:</strong> Customer Service <span title="support@bank-el.com">Bank Support</span>
+    </div>
+
+    <div class="email-body">
+      <p>Καλημέρα σας,</p>
+
+      <p>Σύμφωνα με την πρόσφατη αναθεώρηση των διαδικασιών συμμόρφωσης, παρακαλούμε να επικαιροποιήσετε τα στοιχεία σας ώστε να συνεχίσετε να έχετε πλήρη πρόσβαση στις υπηρεσίες μας.</p>
+
+      <p>Για την ασφάλειά σας, χρησιμοποιήστε τον παρακάτω σύνδεσμο για να εισέλθετε στον λογαριασμό σας:
+        <a href="#">Είσοδος στον λογαριασμό</a>
+      </p>
+
+      <p>Εάν έχετε ήδη προβεί στην ενέργεια, παρακαλούμε αγνοήστε το παρόν μήνυμα.</p>
+
+      <p>Με εκτίμηση,<br>Τμήμα Εξυπηρέτησης Πελατών</p>
+    </div>
+
+    <div class="assessment">
+      <strong>❓ Πώς αξιολογείτε το παραπάνω email;</strong>
+      <label><input type="radio" name="phishcheck"> Είναι έγκυρο και προέρχεται από επίσημο οργανισμό</label>
+      <label><input type="radio" name="phishcheck"> Πρόκειται για πιθανή προσπάθεια phishing</label>
+
+      <div class="feedback">
+        ⚠️ Το email ενδέχεται να αποτελεί phishing:
+        <ul>
+          <li>Το domain του αποστολέα είναι ύποπτο και δεν παραπέμπει σε επίσημη τραπεζική διεύθυνση.</li>
+          <li>Ο σύνδεσμος χρησιμοποιεί <code>http</code> αντί για <code>https</code> και οδηγεί σε domain με κατάληξη <code>.click</code>, κάτι που συχνά χρησιμοποιείται σε phishing επιθέσεις.</li>
+          <li>Η γλώσσα είναι γενική και δεν περιλαμβάνει καμία εξατομίκευση, όπως όνομα χρήστη ή αριθμό πελάτη.</li>
+        </ul>
+        Η προσεκτική παρατήρηση της διεύθυνσης του αποστολέα και του συνδέσμου είναι απαραίτητη για να διασφαλίσετε την εγκυρότητα του μηνύματος.
+      </div>
+    </div>
+  </div>
+</body>
+</html>
