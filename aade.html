@@ -6,21 +6,25 @@
   <style>
     body {
       font-family: Arial, sans-serif;
-      background-color: #f9fafb;
-      padding: 40px;
+      background-color: #e6f0fa;
+      margin: 0;
+      padding: 60px 0; /* Προσθέτει διάστημα πάνω και κάτω */
     }
     .email-container {
-      max-width: 680px;
-      margin: auto;
+      width: 100%;
+      max-width: 900px;
+      margin: 0 auto;
       background-color: #ffffff;
-      border-radius: 12px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-      padding: 30px;
+      border-radius: 6px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+      padding: 60px 80px;
+      border-left: 6px solid #004080;
+      box-sizing: border-box;
     }
     .header {
       display: flex;
       align-items: center;
-      margin-bottom: 20px;
+      margin-bottom: 30px;
     }
     .header img {
       width: 60px;
@@ -28,7 +32,7 @@
     }
     .header .org-name {
       font-weight: bold;
-      font-size: 18px;
+      font-size: 20px;
       color: #1f2937;
     }
     .header .org-name:hover::after {
@@ -53,9 +57,10 @@
       margin-left: 6px;
     }
     .email-body {
-      font-size: 15px;
+      font-size: 16px;
       color: #333;
-      line-height: 1.7;
+      line-height: 1.8;
+      text-align: justify;
     }
     .email-body a {
       color: #2563eb;
@@ -68,18 +73,19 @@
       display: block;
     }
     .question-block {
-      margin-top: 30px;
-      padding: 20px;
-      background-color: #f3f4f6;
-      border-radius: 8px;
+      margin-top: 40px;
+      padding: 25px;
+      background-color: #f0f8ff;
+      border-radius: 6px;
+      border: 1px solid #b6d4fe;
     }
     .question-block strong {
       display: block;
-      margin-bottom: 10px;
+      margin-bottom: 12px;
       font-size: 16px;
     }
     .email-footer {
-      margin-top: 30px;
+      margin-top: 40px;
       font-size: 12px;
       color: #6b7280;
       border-top: 1px solid #e5e7eb;
@@ -93,6 +99,13 @@
       border-radius: 6px;
       color: #1e3a8a;
       font-size: 14px;
+      display: none;
+    }
+    .hint {
+      margin-top: 10px;
+      font-size: 14px;
+      color: #ef4444;
+      display: none;
     }
   </style>
 </head>
@@ -126,15 +139,35 @@
 
     <div class="question-block">
       <strong>Αυτό το email προέρχεται από επίσημο οργανισμό;</strong>
-      <p><strong>Απάντηση:</strong> Ναι</p>
-      <div class="explanation">
-        ✅ Το συγκεκριμένο email είναι αυθεντικό. Αυτό τεκμηριώνεται από το επίσημο domain αποστολέα (<code>@aade.gr</code>), την ύπαρξη λογότυπου και σωστής μορφοποίησης, καθώς και από τον σύνδεσμο που οδηγεί σε επίσημη διεύθυνση της ΑΑΔΕ. Επιπλέον, το περιεχόμενο είναι ουδέτερο, χωρίς πίεση ή αίτημα για άμεση παροχή ευαίσθητων στοιχείων μέσω του email.
-      </div>
+      <label><input type="radio" name="question" value="yes"> Ναι</label>
+      <label><input type="radio" name="question" value="no"> Όχι</label>
+      <button onclick="checkAnswer()">Υποβολή</button>
+      <div class="explanation" id="feedback"></div>
+      <div class="hint" id="hint">💡 Υπόδειξη: Δώσε προσοχή στο domain του αποστολέα και στον σύνδεσμο της εφαρμογής.</div>
     </div>
 
     <div class="email-footer">
       Αυτό είναι ένα αυτοματοποιημένο μήνυμα – μην απαντάτε. Για επιπλέον πληροφορίες επισκεφθείτε την επίσημη σελίδα της ΑΑΔΕ.
     </div>
   </div>
+
+  <script>
+    function checkAnswer() {
+      const selected = document.querySelector('input[name="question"]:checked');
+      const feedback = document.getElementById('feedback');
+      const hint = document.getElementById('hint');
+
+      if (!selected) return;
+
+      if (selected.value === "yes") {
+        feedback.innerHTML = "✅ Σωστά! Το συγκεκριμένο email είναι αυθεντικό. Αυτό τεκμηριώνεται από το επίσημο domain αποστολέα (<code>@aade.gr</code>), την ύπαρξη λογοτύπου και σωστής μορφοποίησης, καθώς και από τον σύνδεσμο που οδηγεί σε επίσημη διεύθυνση της ΑΑΔΕ.";
+        feedback.style.display = "block";
+        hint.style.display = "none";
+      } else {
+        feedback.style.display = "none";
+        hint.style.display = "block";
+      }
+    }
+  </script>
 </body>
 </html>
