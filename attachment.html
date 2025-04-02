@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="UTF-8">
+  <title>Σενάρια Εκπαιδευτικών Emails - Επισυναπτόμενα Αρχεία</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f3f4f6;
+      padding: 40px;
+    }
+    .email {
+      max-width: 750px;
+      background-color: #ffffff;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      margin-bottom: 40px;
+    }
+    .header {
+      margin-bottom: 10px;
+      font-size: 14px;
+      color: #555;
+    }
+    .subject {
+      font-weight: bold;
+      color: #111827;
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+    .body {
+      font-size: 15px;
+      color: #1f2937;
+      line-height: 1.6;
+    }
+    .attachment {
+      margin-top: 20px;
+      font-size: 14px;
+      color: #2563eb;
+      font-weight: bold;
+    }
+    .assessment {
+      margin-top: 20px;
+      background-color: #e0f2fe;
+      border-left: 4px solid #38bdf8;
+      padding: 15px;
+      border-radius: 8px;
+      font-size: 14px;
+    }
+    .assessment label {
+      display: block;
+      margin-top: 10px;
+    }
+    .feedback {
+      display: none;
+      margin-top: 10px;
+    }
+  </style>
+  <script>
+    function showFeedback(id) {
+      const element = document.getElementById(id);
+      if (element) element.style.display = 'block';
+    }
+  </script>
+</head>
+<body>
+
+  <div class="email">
+    <div class="header">Αποστολέας: finance@greentrees.com | Παραλήπτης: hr@greentrees.com</div>
+    <div class="subject">Αναθεώρηση Αποδοχών για το Τρίτο Τρίμηνο</div>
+    <div class="body">
+      Αγαπητοί συνεργάτες,
+      <br><br>
+      Σας επισυνάπτεται η αναφορά αποδοχών για το τρίτο τρίμηνο του έτους, προς έλεγχο και επικύρωση. Παρακαλούμε ανοίξτε το αρχείο και ενημερώστε το Τμήμα Οικονομικών για οποιαδήποτε διαφορά.
+      <div class="attachment">📎 Επισυναπτόμενο: Q3_Review_2024.pdf.exe</div>
+    </div>
+    <div class="assessment">
+      ❓ Αυτό το email είναι:
+      <label><input type="radio" name="phish1" onclick="showFeedback('fb1')"> Κανονική εταιρική επικοινωνία</label>
+      <label><input type="radio" name="phish1" onclick="showFeedback('fb1')"> Απόπειρα phishing</label>
+      <div id="fb1" class="feedback phishing">
+        ⚠️ Προσοχή: Αν και φαίνεται σαν PDF, η διπλή κατάληξη αποκαλύπτει ότι πρόκειται για εκτελέσιμο αρχείο (.exe). Πρόκειται για κακόβουλο συνημμένο που ενδέχεται να εκτελέσει επικίνδυνο κώδικα.
+      </div>
+    </div>
+  </div>
+
+  <div class="email">
+    <div class="header">Αποστολέας: it-support@greentrees.com | Παραλήπτης: allstaff@greentrees.com</div>
+    <div class="subject">Ενημέρωση Λογισμικού Πολιτικής Χρήσης</div>
+    <div class="body">
+      Καλησπέρα σας,
+      <br><br>
+      Σας αποστέλλεται η νέα έκδοση του εγγράφου Πολιτικής Ορθής Χρήσης Λογισμικού της εταιρίας, όπως εγκρίθηκε από το Τμήμα Νομικών και την Ανώτατη Διοίκηση.
+      Παρακαλώ διαβάστε προσεκτικά το επισυναπτόμενο αρχείο και αποδεχθείτε τους όρους εντός της εβδομάδας.
+      <div class="attachment">📎 Επισυναπτόμενο: SoftwarePolicyUpdate_2024.docm</div>
+    </div>
+    <div class="assessment">
+      ❓ Αυτό το email είναι:
+      <label><input type="radio" name="phish2" onclick="showFeedback('fb2')"> Κανονική εταιρική επικοινωνία</label>
+      <label><input type="radio" name="phish2" onclick="showFeedback('fb2')"> Απόπειρα phishing</label>
+      <div id="fb2" class="feedback phishing">
+        ⚠️ Το αρχείο .docm περιλαμβάνει μακροεντολές που ενδέχεται να εκτελέσουν κακόβουλο κώδικα κατά το άνοιγμα. Δεν συνιστάται να ανοίγετε τέτοια αρχεία χωρίς επιβεβαίωση της γνησιότητάς τους.
+      </div>
+    </div>
+  </div>
+
+  <div class="email">
+    <div class="header">Αποστολέας: accounting@greentrees.com | Παραλήπτης: procurement@greentrees.com</div>
+    <div class="subject">Τιμολόγια Προμηθευτών - Αρχείο Συμφωνίας Μαρτίου</div>
+    <div class="body">
+      Καλημέρα,
+      <br><br>
+      Επισυνάπτεται το τελικό αρχείο συμφωνίας τιμολογίων για τον μήνα Μάρτιο, σε μορφή PDF, όπως συμφωνήθηκε στο τελευταίο meeting του Τμήματος Οικονομικών.
+      Παρακαλώ επιβεβαιώστε την ορθότητα των ποσών έως την Πέμπτη το απόγευμα.
+      <div class="attachment">📎 Επισυναπτόμενο: SupplierInvoices_March.pdf</div>
+    </div>
+    <div class="assessment">
+      ❓ Αυτό το email είναι:
+      <label><input type="radio" name="phish3" onclick="showFeedback('fb3')"> Κανονική εταιρική επικοινωνία</label>
+      <label><input type="radio" name="phish3" onclick="showFeedback('fb3')"> Απόπειρα phishing</label>
+      <div id="fb3" class="feedback legit">
+        ✅ Το επισυναπτόμενο είναι γνήσιο PDF αρχείο, χωρίς ενεργό περιεχόμενο ή μακροεντολές. Η επικοινωνία είναι τυπική και ο αποστολέας αναγνωρίσιμος εντός του οργανισμού.
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
