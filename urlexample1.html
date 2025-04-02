@@ -43,7 +43,41 @@
       color: #dc2626;
       margin-left: 6px;
     }
+    .assessment {
+      margin-top: 30px;
+      background-color: #e0f2fe;
+      border-left: 4px solid #38bdf8;
+      padding: 15px;
+      border-radius: 8px;
+    }
+    .assessment label {
+      display: block;
+      margin-top: 10px;
+      font-size: 15px;
+    }
+    .feedback {
+      margin-top: 15px;
+      background-color: #e0f2fe;
+      border-left: 4px solid #38bdf8;
+      padding: 12px;
+      border-radius: 6px;
+      font-size: 14px;
+      color: #1e3a8a;
+      display: none;
+    }
   </style>
+  <script>
+    function showFeedback() {
+      const feedback = document.querySelector('.feedback');
+      if (feedback) feedback.style.display = 'block';
+    }
+    window.onload = function () {
+      const options = document.querySelectorAll('input[name="phishcheck"]');
+      options.forEach(option => {
+        option.addEventListener('change', showFeedback);
+      });
+    }
+  </script>
 </head>
 <body>
   <div class="email-container">
@@ -69,6 +103,22 @@
       <p>Ευχαριστούμε για τη συνεργασία.</p>
 
       <p>Με εκτίμηση,<br>Τμήμα Ανθρώπινου Δυναμικού</p>
+    </div>
+
+    <div class="assessment">
+      <strong>❓ Πώς αξιολογείτε το παραπάνω email;</strong>
+      <label><input type="radio" name="phishcheck"> Είναι επίσημο email</label>
+      <label><input type="radio" name="phishcheck"> Πρόκειται για phishing</label>
+
+      <div class="feedback">
+        ⚠️ Το email αυτό αποτελεί παράδειγμα phishing, καθώς:
+        <ul>
+          <li>Ο σύνδεσμος που εμφανίζεται με το ποντίκι οδηγεί σε ύποπτο domain που δεν σχετίζεται με την επίσημη εταιρική διεύθυνση.</li>
+          <li>Το όνομα του αποστολέα φαίνεται γενικό και δεν υπάρχει επίσημη εταιρική υπογραφή.</li>
+          <li>Το domain του αποστολέα δεν παραπέμπει σε επίσημο οργανισμό.</li>
+        </ul>
+        Η προσεκτική παρατήρηση του URL αποτελεί κρίσιμο βήμα για την προστασία σας από κακόβουλες ενέργειες.
+      </div>
     </div>
   </div>
 </body>
