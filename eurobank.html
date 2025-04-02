@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="UTF-8">
+  <title>Σενάριο Εκπαίδευσης: Έλεγχος Γλώσσας και Ύφους</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f9fafb;
+      padding: 40px;
+    }
+    .email-container {
+      max-width: 700px;
+      margin: auto;
+      background-color: #ffffff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    }
+    .email-header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .email-header img {
+      max-height: 40px;
+    }
+    .sender-info {
+      font-size: 14px;
+      color: #444;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    .email-body {
+      font-size: 15px;
+      color: #111827;
+      line-height: 1.7;
+    }
+    .email-body p {
+      margin-bottom: 15px;
+    }
+    .email-body a {
+      color: #00448f;
+      font-weight: bold;
+      text-decoration: none;
+      position: relative;
+    }
+    .email-body a::after {
+      content: "https://secure-verification-alerts.com/eurobank";
+      position: absolute;
+      left: 0;
+      top: 100%;
+      font-size: 12px;
+      color: #6b7280;
+      background-color: #f1f5f9;
+      padding: 2px 6px;
+      border-radius: 4px;
+      margin-top: 4px;
+      white-space: nowrap;
+    }
+    .question-block {
+      margin-top: 30px;
+      background-color: #f3f4f6;
+      padding: 20px;
+      border-radius: 8px;
+    }
+    .question-block strong {
+      display: block;
+      margin-bottom: 10px;
+      font-size: 16px;
+    }
+    .question-block ul {
+      margin-top: 10px;
+      padding-left: 20px;
+    }
+    .assessment {
+      margin-top: 30px;
+      background-color: #fff7ed;
+      border-left: 4px solid #f97316;
+      padding: 15px;
+      border-radius: 8px;
+      font-size: 15px;
+    }
+    .assessment label {
+      display: block;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="email-container">
+    <div class="email-header">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Eurobank_Logo.svg/2560px-Eurobank_Logo.svg.png" alt="Eurobank logo">
+    </div>
+
+    <div class="sender-info">
+      <strong>Αποστολέας:</strong> support@eurobank-services.info
+    </div>
+
+    <div class="email-body">
+      <p>Καλησπέρα σας,</p>
+
+      <p>
+        Έχουμε παρατηρήσει κάποιες αλλαγές στον λογαριασμό σας και θα θέλαμε να ρίξετε μια ματιά για παν ενδεχόμενο. Δεν είναι κάτι σοβαρό, απλώς καλού-κακού να το ελέγξετε.
+      </p>
+
+      <p>
+        Αν έχετε χρόνο, πατήστε εδώ για να δείτε τις λεπτομέρειες:
+        <a href="#">Έλεγχος λογαριασμού</a>
+      </p>
+
+      <p>
+        Να είστε καλά και ευχαριστούμε που μας εμπιστεύεστε.
+      </p>
+
+      <p>Με εκτίμηση,<br>Eurobank Team</p>
+    </div>
+
+    <div class="question-block">
+      <strong>🧐 Τι πρέπει να προσέξετε:</strong>
+      <ul>
+        <li>Η προσφώνηση είναι γενική και οικεία (“Καλησπέρα σας”). Είναι αυτό τυπικό για τραπεζική επικοινωνία;</li>
+        <li>Η διατύπωση περιλαμβάνει εκφράσεις όπως “να ρίξετε μια ματιά” και “καλού-κακού” — δείχνουν επίσημο ή ανεπίσημο ύφος;</li>
+        <li>Η υπογραφή “Eurobank Team” είναι επίσημη ή ελλιπής;</li>
+        <li>Υπάρχουν συντακτικά ή γλωσσικά σημεία που δεν συνάδουν με την επαγγελματική ταυτότητα μιας τράπεζας;</li>
+        <li>Ζητούνται ευαίσθητα προσωπικά στοιχεία χωρίς εξασφαλισμένο πλαίσιο; Αν ναι, με ποιο τρόπο;</li>
+        <li>Παρατηρείτε ασάφεια ή κακή χρήση της γλώσσας που μειώνει την αξιοπιστία του μηνύματος;</li>
+      </ul>
+      <p>Η προσεκτική παρατήρηση της γλώσσας, της διατύπωσης και του ύφους ενός email αποτελεί ουσιαστικό βήμα για την αναγνώριση πιθανής προσπάθειας εξαπάτησης.</p>
+    </div>
+
+    <div class="assessment">
+      <strong>❓ Πώς αξιολογείτε το παραπάνω email;</strong>
+      <label><input type="radio" name="phishcheck"> Είναι επίσημο email από την τράπεζα</label>
+      <label><input type="radio" name="phishcheck"> Πρόκειται για phishing προσπάθεια</label>
+    </div>
+  </div>
+</body>
+</html>
