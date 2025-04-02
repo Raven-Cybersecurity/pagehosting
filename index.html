@@ -1,52 +1,41 @@
 <!DOCTYPE html>
 <html lang="el">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>TravelNet Agency</title>
   <style>
     body {
       font-family: Arial, sans-serif;
       background-color: #e6f0fa;
       margin: 0;
-      padding: 60px 0;
+      padding: 0;
     }
     .email-container {
       width: 100%;
       max-width: 900px;
-      margin: 0 auto;
+      margin: 60px auto;
       background-color: #ffffff;
-      border-radius: 6px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
-      padding: 60px 80px;
       border-left: 6px solid #004080;
+      padding: 60px 80px;
       box-sizing: border-box;
     }
-    .email-image {
-      width: 100%;
-      max-width: 300px;
-      display: block;
-      margin: 0 auto 30px;
-      border-radius: 12px;
+    .email-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 30px;
     }
-    .sender {
-      margin-bottom: 20px;
+    .email-header img {
+      max-width: 100px;
+      max-height: 40px;
+    }
+    .sender-info {
       font-size: 14px;
+      color: #444;
     }
-    .sender span {
-      font-weight: bold;
-      color: #1f2937;
-      cursor: pointer;
-    }
-    .sender span:hover::after {
-      content: " <support@travelnet-bipbop.com>";
-      font-size: 12px;
-      color: #4b5563;
-      margin-left: 6px;
-    }
-    h2 {
-      font-size: 20px;
-      margin-top: 0;
-      color: #111;
+    .sender-info span {
+      text-decoration: underline;
+      cursor: help;
     }
     .email-body {
       font-size: 16px;
@@ -100,11 +89,11 @@
 </head>
 <body>
   <div class="email-container">
-    <img src="https://raven-cybersecurity.github.io/pagehosting/images/santorini.jpeg" alt="Travel photo" class="email-image">
-
-    <div class="sender">
-      <strong>Αποστολέας:</strong>
-      <span>TravelNet Agency</span>
+    <div class="email-header">
+      <img src="https://raven-cybersecurity.github.io/pagehosting/images/santorini.jpeg" alt="Travel photo">
+      <div class="sender-info">
+        <strong>Αποστολέας:</strong> <span title="support@travelnet-bipbop.com">support@travelnet-bipbop.com</span>
+      </div>
     </div>
 
     <h2>⚠️ Επείγουσα Ενημέρωση για τον Λογαριασμό σας</h2>
@@ -143,11 +132,11 @@
       hint.style.display = 'none';
 
       if (answer === 'yes') {
-        feedback.style.display = 'block';
-        feedback.innerHTML = `<strong>Επισήμανση:</strong>
-        <p>Το εμφανιζόμενο όνομα αποστολέα δεν αποτελεί απόδειξη αξιοπιστίας. Εάν τοποθετήσετε τον δείκτη του ποντικιού πάνω στο όνομα, μπορείτε να δείτε τη <strong>πραγματική ηλεκτρονική διεύθυνση</strong>. Αξιολογήστε ξανά την προέλευση του συγκεκριμένου email.</p>`;
-      } else {
         hint.style.display = 'block';
+      } else {
+        feedback.style.display = 'block';
+        feedback.innerHTML = `<strong>Σωστή Παρατήρηση:</strong>
+        <p>Παρόλο που το εμφανιζόμενο όνομα είναι "TravelNet Agency", η προσεκτική εξέταση της διεύθυνσης ηλεκτρονικού ταχυδρομείου αποκαλύπτει ότι <strong>δεν</strong> πρόκειται για επίσημο φορέα. Η διεύθυνση "support@travelnet-bipbop.com" δεν αντιστοιχεί σε γνωστό ή επιβεβαιωμένο domain της εταιρείας TravelNet και συνεπώς ενέχει υψηλό βαθμό κινδύνου.</p>`;
       }
     });
   </script>
