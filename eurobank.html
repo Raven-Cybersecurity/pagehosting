@@ -84,12 +84,21 @@
       display: block;
       margin-top: 10px;
     }
+    .feedback {
+      margin-top: 15px;
+      background-color: #ecfdf5;
+      border-left: 4px solid #10b981;
+      padding: 12px;
+      border-radius: 6px;
+      font-size: 14px;
+      color: #065f46;
+    }
   </style>
 </head>
 <body>
   <div class="email-container">
     <div class="email-header">
-      <img src="eurobank-logo.png" alt="Eurobank logo">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Eurobank_Logo.svg/2560px-Eurobank_Logo.svg.png" alt="Eurobank logo">
     </div>
 
     <div class="sender-info">
@@ -132,6 +141,10 @@
       <strong>❓ Πώς αξιολογείτε το παραπάνω email;</strong>
       <label><input type="radio" name="phishcheck"> Είναι επίσημο email από την τράπεζα</label>
       <label><input type="radio" name="phishcheck"> Πρόκειται για phishing προσπάθεια</label>
+
+      <div class="feedback">
+        👉 Πρόκειται για phishing, καθώς η διεύθυνση αποστολέα δεν είναι επίσημη της Eurobank και το link οδηγεί σε μη αναγνωρίσιμο domain. Επιπλέον, η γλώσσα είναι ανεπίσημη και γενική, κάτι που δεν συνάδει με την επικοινωνιακή ταυτότητα ενός τραπεζικού οργανισμού.
+      </div>
     </div>
   </div>
 </body>
