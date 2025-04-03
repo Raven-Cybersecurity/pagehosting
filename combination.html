@@ -1,206 +1,178 @@
-<!-- ✅ PHISHING SIMULATION – IMPROVED VERSION -->
-
-<style>
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="UTF-8">
+  <title>Σενάρια Εκπαιδευτικών Emails - Επισυναπτόμενα Αρχεία</title>
+  <style>
     body {
-      background-color: #e9f2fb;
-      padding: 30px 10px;
-    }
-  
-    .email-card {
-      max-width: 700px;
-      margin: 0 auto;
       font-family: Arial, sans-serif;
-      border: 1px solid #ccc;
-      background-color: #fff;
-      border-radius: 8px;
-      overflow: hidden;
-      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      background-color: #e6f0fa;
+      padding: 40px;
+      margin: 0;
     }
-  
-    .email-header {
-      background-color: #cde4f9;
-      padding: 15px;
+    .email {
+      max-width: 900px;
+      background-color: #ffffff;
+      padding: 60px 80px;
+      border-radius: 10px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      margin: 40px auto;
+      border-left: 8px solid #004080;
+      box-sizing: border-box;
     }
-  
-    .email-body {
-      padding: 20px;
-      color: #333;
+    .header {
+      font-size: 14px;
+      color: #374151;
+      margin-bottom: 16px;
     }
-  
-    .email-footer {
-      background-color: #cde4f9;
-      padding: 12px;
-      font-size: 12px;
-      text-align: center;
-      color: #555;
-    }
-  
-    .button-area {
-      text-align: center;
-      margin-top: 25px;
-    }
-  
-    .answer-btn {
-      padding: 10px 24px;
-      border: none;
-      border-radius: 5px;
+    .subject {
       font-weight: bold;
-      font-size: 16px;
-      margin: 0 10px;
-      cursor: pointer;
-    }
-  
-    .phishing-btn {
-      background-color: #e60013;
-      color: white;
-    }
-  
-    .valid-btn {
-      background-color: #0077b6;
-      color: white;
-    }
-  
-    .next-btn {
-      background-color: #444;
-      color: white;
-      padding: 10px 24px;
-      margin-top: 20px;
-      border: none;
-      border-radius: 5px;
-      font-weight: bold;
-      cursor: pointer;
-    }
-  
-    .feedback {
-      text-align: center;
-      font-weight: bold;
+      color: #1f2937;
       font-size: 18px;
-      margin-top: 20px;
+      margin-bottom: 20px;
     }
-  
-    #tooltip {
-      position: absolute;
-      background: #222;
-      color: #fff;
-      padding: 5px 10px;
-      border-radius: 4px;
-      font-size: 13px;
-      display: none;
-      z-index: 1000;
+    .body {
+      font-size: 16px;
+      color: #111827;
+      line-height: 1.8;
+      text-align: justify;
     }
-  
-    .hoverlink {
-      position: relative;
-      border-bottom: 1px dotted #007bff;
-      color: #007bff;
-      cursor: pointer;
-    }
-  
     .attachment {
-      color: green;
+      margin-top: 20px;
+      font-size: 14px;
+      color: #2563eb;
+      font-weight: bold;
       cursor: pointer;
+    }
+    .attachment:hover::after {
+      content: attr(data-extension);
+      font-size: 12px;
+      color: #6b7280;
+      display: block;
+    }
+    .assessment {
+      margin-top: 30px;
+      background-color: #f0f8ff;
+      border-left: 4px solid #1e3a8a;
+      padding: 20px;
+      border-radius: 8px;
+      font-size: 15px;
+    }
+    .assessment label {
+      display: block;
+      margin-top: 10px;
+    }
+    .feedback, .hint {
+      margin-top: 15px;
+      padding: 15px;
+      border-radius: 6px;
+      font-size: 14px;
+      display: none;
+    }
+    .feedback {
+      background-color: #e0f2fe;
+      border-left: 4px solid #38bdf8;
+      color: #1e3a8a;
+    }
+    .hint {
+      background-color: #fff7ed;
+      border-left: 4px solid #f97316;
+      color: #92400e;
     }
   </style>
-  
-  <!-- ✅ Question 1 -->
-  <div id="question1" class="email-card">
-    <div class="email-header">
-      <img src="TUI_Logo_2016.svg.png" alt="TUI Logo" style="height: 40px;">
+</head>
+<body>
+
+  <!-- Παράδειγμα 1 -->
+  <div class="email">
+    <div class="header">Αποστολέας: finance@greentrees.com | Παραλήπτης: hr@greentrees.com</div>
+    <div class="subject">Αναθεώρηση Αποδοχών για το Τρίτο Τρίμηνο</div>
+    <div class="body">
+      Αγαπητοί συνεργάτες,
+      <br><br>
+      Σας επισυνάπτεται η αναφορά αποδοχών για το τρίτο τρίμηνο του έτους, προς έλεγχο και επικύρωση. Παρακαλούμε ανοίξτε το αρχείο και ενημερώστε το Τμήμα Οικονομικών για οποιαδήποτε διαφορά.
+      <div class="attachment" data-extension="Q3_Review_2024.pdf.exe">📎 Αναφορά Αποδοχών</div>
     </div>
-    <div class="email-body">
-      <p><strong>From:</strong> tui.support@tui-bookings.com</p>
-      <p><strong>Subject:</strong> Your Booking Confirmation – Action Required</p>
-      <hr>
-      <p>Dear customer,</p>
-      <p>We’ve noticed an issue with your payment. Please 
-        <span class="hoverlink" onmouseover="showTooltip(event, 'https://tui-secure-check.com/payment')" onmouseout="hideTooltip()">click here to update your payment details</span>.
-      </p>
-      <p>Attachment: 
-        <span class="attachment" onmouseover="showTooltip(event, 'BookingConfirmation.scr')" onmouseout="hideTooltip()">BookingConfirmation.pdf</span>
-      </p>
-      <p>Thank you for choosing TUI.<br>The TUI Team</p>
-    </div>
-    <div class="email-footer">
-      This email was sent to you as part of your booking with TUI.
-    </div>
-  </div>
-  
-  <div class="button-area">
-    <strong>Is this email legitimate or phishing?</strong><br><br>
-    <button onclick="showFeedback(true, 'question1')" class="answer-btn phishing-btn">Phishing</button>
-    <button onclick="showFeedback(false, 'question1')" class="answer-btn valid-btn">Valid</button>
-  </div>
-  
-  <div id="feedback-question1" class="feedback"></div>
-  
-  <div id="next-button" style="text-align: center; display: none;">
-    <button onclick="showQuestion2()" class="next-btn">Next Email</button>
-  </div>
-  
-  <!-- ✅ Tooltip -->
-  <div id="tooltip"></div>
-  
-  <!-- ✅ Question 2 -->
-  <div id="question2" style="display: none;">
-    <div class="email-card" style="margin-top: 60px;">
-      <div class="email-body">
-        <p><strong>From:</strong> hr@company-careers.net</p>
-        <p><strong>Subject:</strong> Interview Invitation - Next Steps</p>
-        <hr>
-        <p>Dear applicant,</p>
-        <p>We are pleased to invite you for an online interview. Please download the file below for instructions:</p>
-        <p>Attachment: 
-          <span class="attachment" onmouseover="showTooltip(event, 'InterviewSchedule.exe')" onmouseout="hideTooltip()">InterviewDetails.pdf</span>
-        </p>
-        <p>Thank you,<br>HR Department</p>
+    <div class="assessment">
+      ❓ Αυτό το email είναι:
+      <label><input type="radio" name="phish1" onclick="showFeedback('fb1', true)"> Απόπειρα phishing</label>
+      <label><input type="radio" name="phish1" onclick="showFeedback('fb1', false)"> Κανονική εταιρική επικοινωνία</label>
+      <div id="fb1" class="feedback">
+        ⚠️ Αν και φαίνεται σαν PDF, η διπλή κατάληξη αποκαλύπτει ότι πρόκειται για εκτελέσιμο αρχείο (.exe). Ενδέχεται να περιέχει κακόβουλο κώδικα.
       </div>
-      <div class="email-footer">
-        Automated message – do not reply.
-      </div>
-    </div>
-  
-    <div class="button-area">
-      <strong>Is this email legitimate or phishing?</strong><br><br>
-      <button onclick="showFeedback(true, 'question2')" class="answer-btn phishing-btn">Phishing</button>
-      <button onclick="showFeedback(false, 'question2')" class="answer-btn valid-btn">Valid</button>
-      <div id="feedback-question2" class="feedback"></div>
+      <div id="hint1" class="hint">💡 Υπόδειξη: Προσέξτε τη μορφή του αρχείου και τις κρυμμένες καταλήξεις.</div>
     </div>
   </div>
-  
-  <!-- ✅ Script -->
+
+  <!-- Παράδειγμα 2 -->
+  <div class="email">
+    <div class="header">Αποστολέας: it-support@greentrees.com | Παραλήπτης: allstaff@greentrees.com</div>
+    <div class="subject">Ενημέρωση Λογισμικού Πολιτικής Χρήσης</div>
+    <div class="body">
+      Καλησπέρα σας,
+      <br><br>
+      Σας αποστέλλεται η νέα έκδοση του εγγράφου Πολιτικής Ορθής Χρήσης Λογισμικού της εταιρίας. Διαβάστε προσεκτικά το συνημμένο αρχείο.
+      <div class="attachment" data-extension="SoftwarePolicyUpdate_2024.docm">📎 Πολιτική Λογισμικού</div>
+    </div>
+    <div class="assessment">
+      ❓ Αυτό το email είναι:
+      <label><input type="radio" name="phish2" onclick="showFeedback('fb2', false)"> Απόπειρα phishing</label>
+      <label><input type="radio" name="phish2" onclick="showFeedback('fb2', true)"> Κανονική εταιρική επικοινωνία</label>
+      <div id="fb2" class="feedback">
+        ✅ Το email μπορεί να είναι γνήσιο, αλλά απαιτείται προσοχή: τα αρχεία .docm υποστηρίζουν μακροεντολές που σε ορισμένες περιπτώσεις χρησιμοποιούνται κακόβουλα. Ελέγξτε την πηγή πριν τα ανοίξετε.
+      </div>
+      <div id="hint2" class="hint">💡 Υπόδειξη: Η κατάληξη .docm δεν είναι απαραίτητα κακόβουλη, αλλά πρέπει να αξιολογείται βάσει περιεχομένου και αποστολέα.</div>
+    </div>
+  </div>
+
+  <!-- Παράδειγμα 3 -->
+  <div class="email">
+    <div class="header">Αποστολέας: accounting@greentrees.com | Παραλήπτης: procurement@greentrees.com</div>
+    <div class="subject">Τιμολόγια Προμηθευτών - Αρχείο Συμφωνίας Μαρτίου</div>
+    <div class="body">
+      Καλημέρα,
+      <br><br>
+      Επισυνάπτεται το τελικό αρχείο συμφωνίας τιμολογίων για τον Μάρτιο σε μορφή PDF. Παρακαλώ επιβεβαιώστε την ορθότητα.
+      <div class="attachment" data-extension="SupplierInvoices_March.pdf">📎 Τιμολόγια Μαρτίου</div>
+    </div>
+    <div class="assessment">
+      ❓ Αυτό το email είναι:
+      <label><input type="radio" name="phish3" onclick="showFeedback('fb3', true)"> Κανονική εταιρική επικοινωνία</label>
+      <label><input type="radio" name="phish3" onclick="showFeedback('fb3', false)"> Απόπειρα phishing</label>
+      <div id="fb3" class="feedback">
+        ✅ Το επισυναπτόμενο είναι τυπικό αρχείο PDF χωρίς ενδείξεις κακόβουλης πρόθεσης και με σωστή επικοινωνία.
+      </div>
+      <div id="hint3" class="hint">💡 Υπόδειξη: Οι γνήσιες επικοινωνίες περιέχουν λογική προσφώνηση, καθαρή δομή και ασφαλή συνημμένα.</div>
+    </div>
+  </div>
+
+  <!-- Παράδειγμα 4 -->
+  <div class="email">
+    <div class="header">Αποστολέας: billing@greentrees.com | Παραλήπτης: logistics@greentrees.com</div>
+    <div class="subject">Νέο Τιμολόγιο για Παραλαβή</div>
+    <div class="body">
+      Καλησπέρα σας,
+      <br><br>
+      Επισυνάπτεται το τιμολόγιο για την τελευταία αποστολή εμπορευμάτων. Παρακαλώ επιβεβαιώστε και προχωρήστε στις διαδικασίες.
+      <div class="attachment" data-extension="invoice_4435.pdf.scr">📎 Τιμολόγιο αποστολής</div>
+    </div>
+    <div class="assessment">
+      ❓ Αυτό το email είναι:
+      <label><input type="radio" name="phish4" onclick="showFeedback('fb4', true)"> Απόπειρα phishing</label>
+      <label><input type="radio" name="phish4" onclick="showFeedback('fb4', false)"> Κανονική εταιρική επικοινωνία</label>
+      <div id="fb4" class="feedback">
+        ⚠️ Το επισυναπτόμενο αρχείο έχει κατάληξη .scr (screen saver file), που μπορεί να χρησιμοποιηθεί για κακόβουλο σκοπό. Δεν είναι τυπική μορφή για τιμολόγια.
+      </div>
+      <div id="hint4" class="hint">💡 Υπόδειξη: Βεβαιωθείτε ότι η κατάληξη συμφωνεί με το περιεχόμενο που ισχυρίζεται το email.</div>
+    </div>
+  </div>
+
   <script>
-  function showTooltip(e, text) {
-    const tooltip = document.getElementById('tooltip');
-    tooltip.innerText = text;
-    tooltip.style.left = (e.pageX + 10) + 'px';
-    tooltip.style.top = (e.pageY + 10) + 'px';
-    tooltip.style.display = 'block';
-  }
-  function hideTooltip() {
-    document.getElementById('tooltip').style.display = 'none';
-  }
-  
-  function showFeedback(isCorrect, id) {
-    const feedbackDiv = document.getElementById('feedback-' + id);
-    feedbackDiv.style.display = 'block';
-    feedbackDiv.innerHTML = isCorrect 
-      ? "✅ Correct! This is a phishing email." 
-      : "❌ Incorrect. This was actually phishing.";
-    feedbackDiv.style.color = isCorrect ? "green" : "red";
-  
-    if (id === "question1") {
-      document.getElementById("next-button").style.display = "block";
+    function showFeedback(id, correct) {
+      document.getElementById(id).style.display = correct ? "block" : "none";
+      document.getElementById("hint" + id.charAt(id.length - 1)).style.display = correct ? "none" : "block";
     }
-  
-    // Scroll to feedback smoothly
-    setTimeout(() => {
-      feedbackDiv.scrollIntoView({ behavior: "smooth", block: "center" });
-    }, 200);
-  }
-  
-  function showQuestion2() {
-    document.getElementById("question2").style.display = "block";
-    document.getElementById("next-button").style.display = "none";
-  }
   </script>
-  
+
+</body>
+</html>
