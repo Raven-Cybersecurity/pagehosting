@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="UTF-8">
+  <title>Προσομοίωση Email - Outlook Style</title>
+  <style>
+    body {
+      background-color: #f3f2f1;
+      font-family: Calibri, Arial, sans-serif;
+      margin: 0;
+      padding: 30px;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .subject-bar {
+      padding: 20px 30px;
+      font-size: 18px;
+      font-weight: bold;
+      background-color: #ffffff;
+      border-bottom: 1px solid #ddd;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+      margin-bottom: 10px;
+    }
+
+    .email-wrapper {
+      background-color: #ffffff;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+      border: 1px solid #ddd;
+    }
+
+    .email-header {
+      padding: 20px 30px;
+      border-bottom: 1px solid #ccc;
+      background-color: #ffffff;
+    }
+
+    .email-header p {
+      margin: 6px 0;
+      font-size: 14px;
+      color: #333;
+    }
+
+    .email-header strong {
+      font-weight: bold;
+    }
+
+    .email-body {
+      padding: 30px;
+      font-size: 15px;
+      color: #222;
+      line-height: 1.6;
+    }
+
+    .fake-link {
+      color: #0033cc;
+      font-weight: bold;
+      text-decoration: underline dotted;
+      cursor: help;
+    }
+
+    .fake-link:hover {
+        color: #0066cc;
+    }    
+
+    .email-footer {
+      border-top: 1px solid #ccc;
+      background-color: #f9f9f9;
+      padding: 20px 30px;
+      font-size: 13px;
+      color: #555;
+    }
+
+    .sender-icon {
+      width: 36px;
+      height: 36px;
+      background-color: #d0e3fc;
+      color: #003366;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      font-weight: bold;
+      font-size: 16px;
+      margin-right: 12px;
+    }
+
+    .header-flex {
+      display: flex;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- Subject Line -->
+    <div class="subject-bar">
+      Υπενθύμιση Ενημέρωσης Προσωπικών Στοιχείων
+    </div>
+
+    <div class="email-wrapper">
+      <!-- Header -->
+      <div class="email-header">
+        <div class="header-flex">
+          <div class="sender-icon">BS</div>
+          <div>
+            <p>
+              <strong>
+                <span title="banksupport-info@security-bankmail.com" style="text-decoration: underline dotted; cursor: help;">
+                  Customer Service Bank Support
+                </span>
+              </strong>
+            </p>
+            <p>Προς: Χρήστης Εκπαίδευσης</p>
+            <p><strong>Τετ 8/5/2025 9:45 π.μ.</strong></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Body -->
+      <div class="email-body">
+        <div style="text-align: center; margin-bottom: 20px;">
+          <img src="https://via.placeholder.com/150x50?text=Bank+Logo" alt="Bank Logo" style="max-width: 150px; height: auto;">
+        </div>
+
+        <p>Καλημέρα σας,</p>
+
+        <p>Σύμφωνα με την πρόσφατη αναθεώρηση των διαδικασιών συμμόρφωσης, παρακαλούμε να επικαιροποιήσετε τα στοιχεία σας ώστε να συνεχίσετε να έχετε πλήρη πρόσβαση στις υπηρεσίες μας.</p>
+
+        <p>
+          Για την ασφάλειά σας, χρησιμοποιήστε τον παρακάτω "σύνδεσμο" για να εισέλθετε στον λογαριασμό σας:<br>
+          <span class="fake-link" title="http://bank-login-verification.net">Είσοδος στον λογαριασμό</span>
+        </p>
+
+        <p>Εάν έχετε ήδη προβεί σε αυτή την ενέργεια, παρακαλούμε αγνοήστε το παρόν μήνυμα.</p>
+
+        <p>Με εκτίμηση,<br>Τμήμα Εξυπηρέτησης Πελατών</p>
+      </div>
+
+      <!-- Footer -->
+      <div class="email-footer">
+        Το μήνυμα αυτό αποτελεί μέρος προσομοίωσης στο πλαίσιο εκπαίδευσης ασφάλειας. Δεν πρόκειται για πραγματικό email.
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>
